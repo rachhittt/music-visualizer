@@ -24,3 +24,64 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Fullscreen canvas styles */
+canvas:fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  display: block;
+  z-index: 1;
+}
+
+/* Allow fixed positioned elements (like floating controls) to show in fullscreen */
+canvas:fullscreen ~ div {
+  display: block !important;
+  z-index: 9999 !important;
+}
+
+/* Ensure floating controls are always visible */
+.fixed {
+  z-index: 9999 !important;
+}
+
+/* Fullscreen controls styling */
+.fullscreen-controls {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.fullscreen-exit-btn {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 200ms;
+  backdrop-filter: blur(4px);
+}
+
+.fullscreen-exit-btn:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
