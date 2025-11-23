@@ -554,12 +554,10 @@ export default function MusicVisualizer() {
         {!isFullscreen && (
           <button
             onClick={toggleFullscreen}
-            className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-black/75 text-white rounded-lg transition-all duration-200 backdrop-blur-sm"
-            title={isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
+            className="absolute top-4 right-4 px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-sm font-semibold rounded-lg transition-all duration-200 backdrop-blur-sm shadow-lg hover:shadow-cyan-500/50"
+            title="Enter Fullscreen"
           >
-            <span className="text-lg">
-              {isFullscreen ? '⛶' : '⛶'}
-            </span>
+            Fullscreen
           </button>
         )}
       </div>
@@ -571,10 +569,10 @@ export default function MusicVisualizer() {
           <div className="fullscreen-exit-btn">
             <button
               onClick={toggleFullscreen}
-              className="text-white text-xl hover:opacity-75 transition-opacity"
+              className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-lg transition-all duration-200 backdrop-blur-sm"
               title="Press ESC to exit"
             >
-              ✕
+              Exit
             </button>
           </div>
 
@@ -582,7 +580,7 @@ export default function MusicVisualizer() {
           <div className="fullscreen-controls">
             <div className="text-center">
               <div className="text-white font-semibold mb-2">
-                {visualMode === 'bars' ? '📊 Bars Mode' : '🎯 Circle Mode'}
+                {visualMode === 'bars' ? 'Bars Mode' : 'Circle Mode'}
               </div>
               <div className="text-xs text-gray-400">
                 Click canvas to toggle
@@ -602,7 +600,7 @@ export default function MusicVisualizer() {
               : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
           }`}
         >
-          📊 Bars
+          Bars
         </button>
         <button
           onClick={() => setVisualMode('circle')}
@@ -612,7 +610,7 @@ export default function MusicVisualizer() {
               : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
           }`}
         >
-          🎯 Circle
+          Circle
         </button>
       </div>
 
@@ -621,7 +619,7 @@ export default function MusicVisualizer() {
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center flex-wrap">
           {/* File Upload */}
           <label className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg cursor-pointer hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center gap-2 transform hover:scale-105">
-            <span>📁 Choose Audio File</span>
+            <span>Choose Audio File</span>
             <input
               type="file"
               accept="audio/*"
@@ -639,7 +637,7 @@ export default function MusicVisualizer() {
                 : 'bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:shadow-lg hover:shadow-green-500/50'
             }`}
           >
-            <span>{isMicActive ? '🛑 Stop Mic' : '🎤 Use Microphone'}</span>
+            <span>{isMicActive ? 'Stop Microphone' : 'Use Microphone'}</span>
           </button>
 
           {/* Play/Pause Button */}
@@ -648,7 +646,7 @@ export default function MusicVisualizer() {
               onClick={togglePlayPause}
               className="px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105 animate-in fade-in"
             >
-              {isPlaying ? '⏸ Pause' : '▶ Play'}
+              {isPlaying ? 'Pause' : 'Play'}
             </button>
           )}
         </div>
@@ -658,7 +656,7 @@ export default function MusicVisualizer() {
           <div className="mt-4 p-4 bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-lg border border-purple-700 animate-in fade-in duration-500">
             <div className="text-center mb-4">
               <div className="inline-block px-3 py-1 bg-purple-600/50 rounded-full mb-2">
-                <p className="text-purple-300 text-xs font-semibold">📁 FILE MODE</p>
+                <p className="text-purple-300 text-xs font-semibold">FILE MODE</p>
               </div>
               <p className="text-white font-semibold text-lg truncate">Playing: {fileName}</p>
             </div>
@@ -688,7 +686,7 @@ export default function MusicVisualizer() {
               <span className="inline-flex h-3 w-3 animate-pulse rounded-full bg-green-400"></span>
               <div className="text-center">
                 <div className="inline-block px-3 py-1 bg-green-600/50 rounded-full mb-2">
-                  <p className="text-green-300 text-xs font-semibold">🎤 MIC MODE</p>
+                  <p className="text-green-300 text-xs font-semibold">MIC MODE</p>
                 </div>
                 <p className="text-green-300 font-semibold text-lg">Microphone Active</p>
               </div>
